@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import './App.css';
 
 import './_resetScss.scss'
@@ -19,6 +19,9 @@ function App() {
         <Router>
           <Switch>
             <LayoutMain>
+              <Route exact path="/">
+                <Redirect to="/home" />
+              </Route>
               <Route exact path='/home' component={Home} />
               <Route exact path='/news' component={News} />
               <Route exact path='/map' component={Map} />
