@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 
 import Advertisement from '../advertisement'
@@ -8,7 +8,7 @@ import Login from '../login'
 function LayoutMain(props) {
 
   const { isOpenLoginForm } = useSelector(state => state.reducer.login)
-  console.log('is', isOpenLoginForm)
+  // console.log('is', isOpenLoginForm)
   return (
     <div>
       <Advertisement />

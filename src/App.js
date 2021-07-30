@@ -1,13 +1,15 @@
-import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import './App.css';
 
 import './_resetScss.scss'
-
 import Theme from './components/theme'
+import LayoutMain from './components/layout/main'
 import AuthRoute from './components/authRoute'
-import Login from './pages/login'
-//import Home from './pages/home'
+//import Map from './components/map'
+
+import Map from './pages/map'
 import News from './pages/news'
+import Home from './pages/home'
 
 function App() {
 
@@ -16,10 +18,11 @@ function App() {
       <Theme>
         <Router>
           <Switch>
-            <AuthRoute exact path='/login' component={Login} />
-            {/* <Route exact path='/home' component={Home} /> */}
-            <Route exact path='/news' component={News} />
-
+            <LayoutMain>
+              <Route exact path='/home' component={Home} />
+              <Route exact path='/news' component={News} />
+              <Route exact path='/map' component={Map} />
+            </LayoutMain>
           </Switch>
         </Router>
       </Theme>

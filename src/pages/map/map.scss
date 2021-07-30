@@ -1,0 +1,18 @@
+.map-page {      
+  width: 80%;  
+  .map {
+    position: relative;
+    z-index: 1;    
+    .map-information {
+      position: absolute;
+      z-index: 0;
+      bottom: 0;
+      top: 70px;
+      right: 0px;
+      width: 20%;    
+      //background-color: black;
+      color: white;      
+      //opacity: .5;    
+    }
+  }
+}

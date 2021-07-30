@@ -6,7 +6,8 @@ import { light } from './light'
 const Global = createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.background};
-    transition: all 200ms;
+    color: ${({ theme }) => theme.textColor};
+    transition: all 200ms;    
   }
 `
 
