@@ -37,15 +37,11 @@ function Menu() {
   return (
     <div className='menu'>
       <Ul>
-        <MenuItem label='H' to='/login' exact='true' />
+        <MenuItem label='Home' to='/home' exact='true' />
         <MenuItem label='News' to='/news' exact='true' />
-        <MenuItem label='Features' to='/feature' exact='true' />
-        <MenuItem label='LifeStyle' to='/life' exact='true' />
-        <MenuItem label='Business' to='/business' exact='true' />
-        <MenuItem label='Sports' to='/sport' exact='true' />
+        <MenuItem label='Map' to='/map' exact='true' />
         {/* <div className='btn-login' onClick={handleLoginOpen}>Login</div> */}
         <Button onClick={handleLoginOpen}>Login</Button>
-
       </Ul>
       {/* <div>Search</div> */}
       {/* {
