@@ -9,6 +9,8 @@ function Home() {
 
   const url = 'https://disease.sh/v3/covid-19/countries'
   const [dataRows, setDataRows] = useState([])
+  // Data Get from store
+  // Test
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
@@ -27,7 +29,7 @@ function Home() {
       <br />
       <div className='countries'>
         <div className='countries--table'>
-          <Countries dataRows={dataRows} />
+          {/* <Countries dataRows={dataRows} /> */}
         </div>
       </div>
       <br />
@@ -38,7 +40,7 @@ function Home() {
         <div className='status-death'>Deaths: 1000</div>
       </div>
 
-      <Chart />
+      {/* <Chart /> */}
     </div>
   )
 }

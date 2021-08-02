@@ -1,3 +1,3 @@
-import { LoginActions } from './slice/login'
+import { ModalActions } from './slice/modal'
 
-export { LoginActions }
+export { ModalActions }
