@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
-import { LoginReducer } from './slice/login'
+import { ModalReducer } from './slice/modal'
 
 const reducer = combineReducers({
-  login: LoginReducer,
+  modal: ModalReducer
 })
 
 export default reducer

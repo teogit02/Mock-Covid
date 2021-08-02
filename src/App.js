@@ -3,8 +3,9 @@ import './App.css';
 
 import './_resetScss.scss'
 import Theme from './components/theme'
-import LayoutMain from './components/layout/main'
-import AuthRoute from './components/authRoute'
+import LayoutMain from './hoc/layout/main'
+import AuthRoute from './hoc/authRoute'
+import PrivateRoute from './hoc/privateRoute'
 //import Map from './components/map'
 
 import Map from './pages/map'
@@ -20,11 +21,11 @@ function App() {
           <Switch>
             <LayoutMain>
               <Route exact path="/">
-                <Redirect to="/home" />
+                <Redirect to="/news" />
               </Route>
-              <Route exact path='/home' component={Home} />
+              <PrivateRoute exact path='/home' component={Home} />
               <Route exact path='/news' component={News} />
-              <Route exact path='/map' component={Map} />
+              <PrivateRoute exact path='/map' component={Map} />
             </LayoutMain>
           </Switch>
         </Router>

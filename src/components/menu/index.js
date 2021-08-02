@@ -1,14 +1,14 @@
 import React from 'react'
-import { useRouteMatch, Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useRouteMatch, Link, useHistory } from 'react-router-dom'
 
 import './menu.scss'
-import {
-  Ul, Li, ActiveLi,
-  Button
-} from './../styles'
+import { Ul, Li, ActiveLi, Button } from './../styles'
+import { useDispatch, useSelector } from 'react-redux'
+import { ModalActions } from './../../redux/actions'
 
-import { LoginActions } from './../../redux/actions'
+import { checkLogin, userLogout } from './../../utils/helper'
+import Modal from './../../hoc/modal'
+import ControlForm from './../../hoc/controlForm'
 
 function MenuItem({ label, to, exact }) {
   let match = useRouteMatch({
@@ -28,11 +28,15 @@ function MenuItem({ label, to, exact }) {
 }
 
 function Menu() {
-
+  const { isModalOpen } = useSelector(state => state.reducer.modal)
   const dispatch = useDispatch()
-  const handleLoginOpen = () => {
-    console.log('open form login')
-    dispatch(LoginActions.toggleFormLogin())
+  const history = useHistory()
+  const handleLoginClick = () => {
+    dispatch(ModalActions.toggleModal())
+  }
+  const handleLogoutClick = () => {
+    userLogout()
+    history.push('/news')
   }
   return (
     <div className='menu'>
@@ -40,13 +44,12 @@ function Menu() {
         <MenuItem label='Home' to='/home' exact='true' />
         <MenuItem label='News' to='/news' exact='true' />
         <MenuItem label='Map' to='/map' exact='true' />
-        {/* <div className='btn-login' onClick={handleLoginOpen}>Login</div> */}
-        <Button onClick={handleLoginOpen}>Login</Button>
+        {/* <Button onClick={handleLoginOpen}>Login</Button> */}
+        {checkLogin() ? <Button onClick={handleLogoutClick}>Logout</Button> : <Button onClick={handleLoginClick}>Login</Button>}
       </Ul>
-      {/* <div>Search</div> */}
-      {/* {
-        isOpenLogin && <Login />
-      } */}
+
+      {isModalOpen && <Modal> <ControlForm /> </Modal>}
+
     </div>
   )
 }
