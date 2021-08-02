@@ -1,13 +1,16 @@
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import './_resetScss.scss'
-
 import Theme from './components/theme'
-import AuthRoute from './components/authRoute'
-import Login from './pages/login'
-//import Home from './pages/home'
+import LayoutMain from './hoc/layout/main'
+import AuthRoute from './hoc/authRoute'
+import PrivateRoute from './hoc/privateRoute'
+//import Map from './components/map'
+
+import Map from './pages/map'
 import News from './pages/news'
+import Home from './pages/home'
 
 function App() {
 
@@ -16,10 +19,14 @@ function App() {
       <Theme>
         <Router>
           <Switch>
-            <AuthRoute exact path='/login' component={Login} />
-            {/* <Route exact path='/home' component={Home} /> */}
-            <Route exact path='/news' component={News} />
-
+            <LayoutMain>
+              <Route exact path="/">
+                <Redirect to="/news" />
+              </Route>
+              <PrivateRoute exact path='/home' component={Home} />
+              <Route exact path='/news' component={News} />
+              <PrivateRoute exact path='/map' component={Map} />
+            </LayoutMain>
           </Switch>
         </Router>
       </Theme>

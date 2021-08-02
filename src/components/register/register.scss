@@ -1,7 +1,5 @@
-.login {   
-  display: flex;
-  overflow: hidden;
-  
+.register {   
+  display: flex;    
   animation-name: animation-form;
   animation-duration: 1s;
   img {
@@ -9,8 +7,8 @@
     display: none;
     //height: 100%;        
   }
-  .login-form {
-    width: 100%;    
+  .register-form {
+    width: 100%;
     .title {
       width: 100%;
       //text-align: center;      
@@ -19,40 +17,39 @@
       font-size: 22px;
       
     }
-    .login-field {            
+    .register-field {          
       width: 100%;      
-      height: 55px;
-      margin-bottom: 10px;      
+      margin-bottom: 10px;
       label {
         width: 100%;      
         display: none;
       }
-      input {
-        width: 100%;        
+      input {        
+        width: 100%;
         height: 45px;
-        border-bottom: 1px solid lightseagreen;        
+        border-bottom: 1px solid lightseagreen;
         &:focus {
           outline: none;
         }
       }      
     }
-    .login-control{
+    .register-control{
       margin-top: 20px;
       text-align: center;
     }
   }
 }
 @media (min-width: 376px) {
-  .login{
-    .login-form{
+  .register{
+    .register-form{
       width: 90%;
       margin: 0 auto;
     }
   }  
 }
 @media (min-width: 650px) {
-  .login{
-    .login-form{      
+  .register{
+    .register-form{      
       width: 80%;
       margin: 0 auto;
     }
@@ -60,12 +57,12 @@
 }
 // i pad
 @media (min-width: 768px) {  
-  .login{
+  .register{
     img {
       width: 300px;
       display: block;
     }
-    .login-form {
+    .register-form {
       width: 50%;      
     }
   }  
@@ -74,7 +71,6 @@
 @media (min-width: 1024px) {
   
 }
-
 @keyframes animation-form {
   from {
     //margin-left: 100%;

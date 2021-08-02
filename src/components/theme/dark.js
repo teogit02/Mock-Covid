@@ -1,6 +1,6 @@
 const dark = {
   textColor: '#fff',
-  background: '#000'
+  background: '#000',
 }
 
 export { dark }
