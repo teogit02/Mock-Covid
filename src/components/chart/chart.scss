@@ -1,5 +1,91 @@
-.chart {
+.chart {    
   width: 100%;
-  margin: 0 auto;
-  border: 1px solid lightseagreen;
+  //box-shadow: 0px 0px 10px #bbb;     
+  border-radius: 5px;          
+  margin: 0 auto;      
+  .title {
+    width: 100%;    
+    font-size: 20px;
+    font-weight: bold;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .chart-toolbar{
+    width: 100%;    
+    height: 35px;    
+    display: flex;
+    align-items: center;    
+    justify-content: flex-start;
+    padding-left: 20px;
+    float: left;    
+    button {      
+      max-width: 10%;      
+      margin-left: 5px;
+      max-width: 60px;
+      border-radius: 5px;      
+      border: 1px solid white;
+      z-index: 1;
+      background: transparent;
+      &:hover {
+        background-color: #6596b1;
+        cursor: pointer;
+      }      
+    }
+    .active{
+      background-color: #6596b1;
+      color: white;         
+    }
+  }
+  .date-range {
+    width: 100%;    
+    height: 35px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;            
+    
+    label {
+      margin: 0 10px;
+    }
+    .date {
+      background-color: #90b9cf;      
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .date-dropdown {
+      display: none;
+      background-color: red;
+    }
+  }
+}     
+//ipad
+@media (min-width: 768px) {    
+  .chart{
+    width: 95%;
+    .chart-toolbar{
+      width: 40%;    
+      button {      
+        width: 100px; 
+      }
+    }
+    .date-range {
+      width: 60%;
+    }
+  }
+}
+// ipad pro
+@media (min-width: 1024px) {
+  .chart {
+    &:hover {
+      box-shadow: 0px 0px 20px #bbb;      
+      transition: .3s;
+    }
+  }
+}
+// desktop
+@media (min-width: 1280px) {  
+  .chart {
+    box-shadow: 0px 0px 20px #bbb;      
+  } 
 }

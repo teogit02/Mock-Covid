@@ -1,0 +1,56 @@
+{
+  "Header": {
+    "Menu": {
+      "Home": "Trang chủ",
+      "News": "Tin tức"
+    },
+    "Settings": {
+      "Language": "Ngôn ngữ",
+      "Login": "Đăng nhập",
+      "Logout": "Đăng xuất"
+    }
+  },
+  "NewsPage": {
+    "Title": "Tin tức covid",
+    "Recently": "Gần đây",
+    "BtnLoadMore": "Tải thêm"
+  },
+  "HomePage": {
+    "Map": {
+      "Title": "Số cá nhiễm covid của thành phố",
+      "Legends": {
+        "Title": "Ca nhiễm"
+      },
+      "Cases": "Cases"
+    },
+    "Overview": {
+      "ActiveCases": "Ca nhiễm",
+      "Deaths": "Tử vong",
+      "Recovered": "Phục hồi"
+    },
+    "Chart": {
+      "Title": "Biểu đồ thống kê",
+      "From": "Từ",
+      "To": "đến",
+      "Legends": {
+        "Cases": "Ca nhiễm",
+        "Deaths": "Tử vong",
+        "Recovered": "Phục hồi"
+      }
+    },
+    "DataTable": {
+      "SearchBar": {
+        "Select": "Chọn"
+      },
+      "Title": "Bảng Quốc Gia",
+      "TableHead": {
+        "Country": "Quốc gia",
+        "TotalCases": "Tổng nhiễm",
+        "TotalDeaths": "Tổng tử vong",
+        "TotalRecovered": "Tổng phục hồi",
+        "TodayCases": "Ca nhiễm hôm nay",
+        "TodayDeaths": "Ca tử vong hôm nay"
+      }
+    }
+  }
+}

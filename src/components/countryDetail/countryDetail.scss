@@ -1,0 +1,25 @@
+.country-detail {
+  width: 100%;
+  margin: 0 auto;  
+  z-index: 1;    
+  .chart{
+    //width: 100%;    
+  }
+} 
+//ipad
+@media (min-width: 768px) {  
+}
+// ipad pro
+@media (min-width: 1024px) {
+ 
+}
+// desktop
+@media (min-width: 1280px) {
+  .country-detail {
+    width: 98%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;  
+  } 
+}

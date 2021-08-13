@@ -10,41 +10,49 @@ const Ul = styled.ul`
   width: 100%;  
   height: 100%;  
   margin: 0 auto;  
+  //ipad
+  @media (min-width: 768px) {
+    width: 90%;
+  }
+  // ipad pro
+  @media (min-width: 1024px) {    
+  }
+  // desktop
+  @media (min-width: 1280px) { 
     
-  @media (min-width: 800px) {
-    width: 800px;
   }
 `
 const Li = styled.li`    
-  //transform: scale(.8);
-  width: 60px;
-  display: flex;
+  //transform: scale(.8); 
+  display: flex;  
   align-items: center;
   justify-content: center;        
   text-align: center;
   height: 100%;
-  color: black;
+  color: #fff;
+  padding:10px;
+  font-size: 16px;
   &:hover {
     cursor: pointer;
   }  
-
-  @media (min-width: 376px) {
-    //width: 60px;
+  //ipad
+  @media (min-width: 768px) {
+    //width: 90px;
   }
-  @media (min-width: 500px) {
-    /* width: 100px;
-    transform: scale(1); */
+  // ipad pro
+  @media (min-width: 1024px) {
   }
-  @media (min-width: 750px) {
-    //width: 80px;    
+  // desktop
+  @media (min-width: 1280px) {     
   }
-  @media (min-width: 800px) {    
-  }  
 `
 const ActiveLi = styled(Li)`
-  color: lightseagreen;
+  color: black;
+  //color: red;
+  display:flex;  
   font-weight: bold;
-  border-bottom: 3px solid lightseagreen;
+  font-size:19px;
+  //border-bottom: 2px solid #6596b1;
 `
 // Button
 const Button = styled.button`  
@@ -58,19 +66,15 @@ const Button = styled.button`
   background:transparent;  
   &:hover {
     cursor: pointer;
+  } 
+  //ipad
+  @media (min-width: 768px) {
   }
-  @media (min-width: 376px) {
-    //width: 60px;
+  // ipad pro
+  @media (min-width: 1024px) {
   }
-  @media (min-width: 500px) {
-    /* width: 60px;
-    transform: scale(1); */
-  }
-  @media (min-width: 750px) {
-    //width: 80px;    
-  }
-  @media (min-width: 800px) {
-    //width: 90px;    
+  // desktop
+  @media (min-width: 1280px) { 
   }
 `
 

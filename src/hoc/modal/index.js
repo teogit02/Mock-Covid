@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
-import { Modal } from 'antd'
+import { Modal as ModalAntd } from 'antd'
 import PropTypes from 'prop-types'
 
-import './modalLogin.scss'
+import './modal.scss'
 import { useDispatch } from 'react-redux'
 import { ModalActions } from './../../redux/actions'
 
-ModalLogin.propTypes = {
+Modal.propTypes = {
   isModalOpen: PropTypes.bool,
+  title: PropTypes.string,
+  myWidth: PropTypes.string,
 }
 
-function ModalLogin(props) {
+function Modal(props) {
+  const { title, myWidth } = props
   const dispatch = useDispatch()
   const [isModalVisible, setIsModalVisible] = useState(true)
 
@@ -22,10 +25,10 @@ function ModalLogin(props) {
   };
 
   return (
-    <Modal title="Sign in - Sign up" visible={isModalVisible} onCancel={handleCancel} footer={null} width={800} >
+    <ModalAntd title={title} visible={isModalVisible} onCancel={handleCancel} footer={null} width={myWidth ? parseInt(myWidth) : '95%'}>
       {props.children}
-    </Modal >
+    </ModalAntd>
   )
 }
 
-export default ModalLogin
+export default Modal

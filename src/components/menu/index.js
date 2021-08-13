@@ -1,14 +1,10 @@
 import React from 'react'
-import { useRouteMatch, Link, useHistory } from 'react-router-dom'
+import { useRouteMatch, Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 import './menu.scss'
-import { Ul, Li, ActiveLi, Button } from './../styles'
-import { useDispatch, useSelector } from 'react-redux'
-import { ModalActions } from './../../redux/actions'
-
-import { checkLogin, userLogout } from './../../utils/helper'
-import Modal from './../../hoc/modal'
-import ControlForm from './../../hoc/controlForm'
+import { Ul, Li, ActiveLi } from './../styles'
+import Setting from './../setting'
 
 function MenuItem({ label, to, exact }) {
   let match = useRouteMatch({
@@ -18,7 +14,6 @@ function MenuItem({ label, to, exact }) {
   return (
     <div className={match ? 'active' : ''}>
       <Link to={to} style={{ textDecoration: 'none' }}>
-        {/* <li className={match}>{label}</li> */}
         {
           match ? <ActiveLi>{label}</ActiveLi> : <Li>{label}</Li>
         }
@@ -26,30 +21,17 @@ function MenuItem({ label, to, exact }) {
     </div>
   )
 }
-
 function Menu() {
-  const { isModalOpen } = useSelector(state => state.reducer.modal)
-  const dispatch = useDispatch()
-  const history = useHistory()
-  const handleLoginClick = () => {
-    dispatch(ModalActions.toggleModal())
-  }
-  const handleLogoutClick = () => {
-    userLogout()
-    history.push('/news')
-  }
+  const { t } = useTranslation()
   return (
     <div className='menu'>
       <Ul>
-        <MenuItem label='Home' to='/home' exact='true' />
-        <MenuItem label='News' to='/news' exact='true' />
-        <MenuItem label='Map' to='/map' exact='true' />
-        {/* <Button onClick={handleLoginOpen}>Login</Button> */}
-        {checkLogin() ? <Button onClick={handleLogoutClick}>Logout</Button> : <Button onClick={handleLoginClick}>Login</Button>}
+        <MenuItem label={t('Header.Menu.Home')} to='/home' exact='true' />
+        <MenuItem label={t('Header.Menu.News')} to='/news' exact='true' />
+        <div className='setting'>
+          <Setting />
+        </div>
       </Ul>
-
-      {isModalOpen && <Modal> <ControlForm /> </Modal>}
-
     </div>
   )
 }

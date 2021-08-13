@@ -12,7 +12,9 @@ function PrivateRoute({ component: Component, ...rest }) {
       {...rest}
       render={props => {
         if (checkLogin()) {
-          return <Component />
+          return (
+            <Component />
+          )
         } else {
           dispatch(ModalActions.toggleModal())
           return (
