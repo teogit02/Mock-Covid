@@ -1,0 +1,56 @@
+{
+  "Header": {
+    "Menu": {
+      "Home": "Home",
+      "News": "News"
+    },
+    "Settings": {
+      "Language": "Language",
+      "Login": "Login",
+      "Logout": "Logout"
+    }
+  },
+  "NewsPage": {
+    "Title": "Covid-19 News Total",
+    "Recently": "Recently",
+    "BtnLoadMore": "Load More"
+  },
+  "HomePage": {
+    "Map": {
+      "Title": "Active Cases By Country",
+      "Legends": {
+        "Title": "Active Cases"
+      },
+      "Cases": "Cases"
+    },
+    "Overview": {
+      "ActiveCases": "Active Cases",
+      "Deaths": "Deaths",
+      "Recovered": "Recovered"
+    },
+    "Chart": {
+      "Title": "Global Chart",
+      "From": "From",
+      "To": "To",
+      "Legends": {
+        "Cases": "Cases",
+        "Deaths": "Deaths",
+        "Recovered": "Recovered"
+      }
+    },
+    "DataTable": {
+      "SearchBar": {
+        "Select": "Select"
+      },
+      "Title": "Countries Table",
+      "TableHead": {
+        "Country": "Country",
+        "TotalCases": "Total cases",
+        "TotalDeaths": "Total deaths",
+        "TotalRecovered": "Total recovered",
+        "TodayCases": "Today case",
+        "TodayDeaths": "Today deaths"
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.data-table {  
+  width: 100%;
+  //padding: 10px;  
+  margin: 0 auto;  
+  border-radius: 5px;
+  //box-shadow: 0px 0px 10px #bbb;   
+  overflow: scroll;    
+  &:hover {
+    box-shadow: 0px 0px 20px #bbb;      
+    transition: all .3s;
+  }
+  .search {
+    margin: 0 auto;
+    width: 90%;
+    z-index: 4;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .title {
+    width: 100%;    
+    font-size: 20px;
+    font-weight: bold;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .flag {
+    width: 40px;
+    height: 30px;        
+    margin-right: 5px;
+  }
+  .country-name {
+    display: flex;
+    align-items: center;    
+    height: 30px;
+    //min-width: 70px;      
+    font-weight: bold;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+//ipad
+@media (min-width: 768px) {  
+  .data-table {
+    width: 95%;
+    padding: 5px;  
+  }
+}
+// ipad pro
+@media (min-width: 1024px) {
+}
+// desktop
+@media (min-width: 1280px) {
+  .data-table {
+    width: 98%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px #bbb;      
+  }
+}

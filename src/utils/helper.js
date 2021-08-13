@@ -19,8 +19,12 @@ export const userRegister = (user) => {
 export const userLogin = (user) => {
   const users = JSON.parse(localStorage.getItem('users'))
   let result = false
+  if (user.email === 'admin@gmail.com' && user.password === 'admin') {
+    result = true
+    localStorage.setItem('userLogin', JSON.stringify(user))
+    return result
+  }
   if (users) {
-    console.log(users)
     users.map(userItem => {
       if (userItem.email === user.email) {
         if (userItem.password === user.password) {
@@ -35,4 +39,8 @@ export const userLogin = (user) => {
 
 export const userLogout = () => {
   localStorage.removeItem('userLogin')
+}
+
+export const randomIndex = (min, max) => {
+  return Math.floor(Math.random() * (max - min) + min)
 }
